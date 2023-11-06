@@ -2,7 +2,8 @@
 :root {
   --deep-blue: #13293d;
   --powder-blue: #81b2de;
-  --gin: #e0eae4;
+  --text-blue: #1d51a3;
+  --background-blue: #d5dcf0;
   --heliotrope: #e866ec;
 }
 
@@ -11,6 +12,7 @@
 }
 
 body {
+  background-color: var(--background-blue);
   margin: 0;
   padding: 0;
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
@@ -77,10 +79,53 @@ p {
 }
 
 .hero-banner {
-  background-image:linear-gradient(rgba(0, 0, 190, 0.3), rgba(0, 0, 190, 0.3)), url("../images/02-hero-bg.jpg");
+  background-image:linear-gradient(rgba(0, 0, 255, 0.3),
+   rgba(0, 0, 255, 0.3)), url("../images/02-hero-bg.jpg");
   height: 100px;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   position: relative;
+}
+
+.hero-banner h2 {
+  color: var(--deep-blue);
+   background-color: var(--powder-blue);
+       font-size: 28px;
+    margin: 40px 80px 75px 100px;
+    float: right;
+}
+
+#about{
+  display: flex;
+  flex-direction: row;
+}
+
+
+.about-me-side h2{
+  font-size: 40px;
+  color: var(--text-blue);
+  margin: 30px 20px 0px 160px;
+  
+}
+
+.about-me-side #me{
+  font-size: 40px;
+  color: var(--text-blue);
+  margin: 0px 0px 0px 210px;
+  
+}
+
+.about-me-side{
+  flex: 1 0 30%;
+
+}
+
+.about-me-text {
+  flex: 1 0 100%;
+   border-left: 2px solid blue;
+    font-size: 15px;
+    padding: 20px;
+ 
+
 }

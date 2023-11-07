@@ -56,7 +56,7 @@ header nav {
 }
 
 /* No marker will be shown on the menu on the webpage */
-header nav ul {
+header nav ul, .contact-footer li {
     list-style-type: none;
 }
 
@@ -73,10 +73,11 @@ a {
   text-underline-offset: 6px;
 }
 
-
 p {
   margin: 0;
 }
+
+
 
 .hero-banner {
   background-image:linear-gradient(rgba(0, 0, 255, 0.3),
@@ -96,36 +97,97 @@ p {
     float: right;
 }
 
-#about{
+.page-section{
   display: flex;
-  flex-direction: row;
+  margin: 5rem 5rem 5rem 5rem;
 }
 
-
-.about-me-side h2{
+.page-section h2{
   font-size: 40px;
-  color: var(--text-blue);
-  margin: 30px 20px 0px 160px;
+  flex: 20%;
+  border-right: 3px solid var(--text-blue);
+  text-align: right;
+  padding-right: 10px;
+  margin-right: 20px;
+}
+
+.page-section p, .work-sect-grid,.contact-footer {
+flex: 80%;
+}
+
+.work-grid-container1 { grid-area: container1; 
+  background-color: #8ea68d;
+  border-style: solid;
+  border-color: var(--powder-blue);
+
+}
+.work-grid-container2 { grid-area: container2;
+  background-image:linear-gradient(rgba(0, 0, 255, 0.3),
+  rgba(0, 0, 255, 0.3)), url("../images/02-portfolio-1.jpg");
+  border-style: solid;
+  border-color: var(--powder-blue);
+   }
+.work-grid-container3 { grid-area: container3; 
+background-image:linear-gradient(rgba(0, 0, 255, 0.3),
+rgba(0, 0, 255, 0.3)), url("../images/02-portfolio-2.jpg");
+border-style: solid;
+  border-color: var(--powder-blue);
+}
+.work-grid-container4 { grid-area: container4;
+  background-image:linear-gradient(rgba(0, 0, 255, 0.3),
+  rgba(0, 0, 255, 0.3)), url("../images/02-portfolio-3.jpg");
+  border-style: solid;
+  border-color: var(--powder-blue);
+ }
+.work-grid-container5 { grid-area: container5; 
+  background-image:linear-gradient(rgba(0, 0, 255, 0.3),
+  rgba(0, 0, 255, 0.3)), url("../images/02-portfolio-4.jpg");
+  border-style: solid;
+  border-color: var(--powder-blue);}
+
+.work-sect-grid {
+ /* margin: 0px 5%;*/
+  display: grid;
+  grid-template-rows: repeat(5,100px);
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas:
+    "container1 container1"
+    "container1 container1"
+    "container1 container1"
+    "container2 container3"
+    "container4 container5"
+;
+  grid-gap: 4px;
+
+  padding: 4px;
+}
+
+.work-grid-area {
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  margin: 5px;
+    display: grid;
+    cursor: pointer;
+  align-content: end;
+}
+
+.work-grid-area h4, .work-grid-area p{
+  background-color: var(--powder-blue);
+  inline-size: 100px;
   
 }
+.work-grid-area p{
+  margin-bottom: 10px;
+}
 
-.about-me-side #me{
-  font-size: 40px;
+.contact-footer {
+  display: flex;
+  justify-content: space-around;
+}
+
+.contact-footer li a {
   color: var(--text-blue);
-  margin: 0px 0px 0px 210px;
-  
-}
-
-.about-me-side{
-  flex: 1 0 30%;
-
-}
-
-.about-me-text {
-  flex: 1 0 100%;
-   border-left: 2px solid blue;
-    font-size: 15px;
-    padding: 20px;
- 
-
+  text-decoration: underline;
+  text-underline-offset: 6px;
 }

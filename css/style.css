@@ -1,4 +1,4 @@
-/* color scheme sourced from http://khroma.co/generator/ */
+/* Define CSS variables for the color scheme */
 :root {
   --deep-blue: #13293d;
   --powder-blue: #81b2de;
@@ -7,10 +7,12 @@
   --heliotrope: #e866ec;
 }
 
+/* Set the box-sizing property to border-box on all elements */
 * {
   box-sizing: border-box;
 }
 
+/* Set the body's background color and other global styles */
 body {
   background-color: var(--background-blue);
   margin: 0;
@@ -19,6 +21,7 @@ body {
   line-height: 1.5;
 }
 
+/* Remove the default margins on headings */
 h1,
 h2,
 h3,
@@ -27,15 +30,19 @@ h5,
 h6 {
   margin: 0;
 }
-/* Below are the style rules for the header on the webpage */
+
+/* Style the header section of the webpage */
 header {
-    padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1%;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
   background-color: var(--deep-blue);
     color: var(--bright-turquoise);
 }
 
-/* Below are the style rules for the "header h1(company logo)" on the webpage */
+/* Below are the style rules for the "header h1" on the webpage */
 header h1 {
   color: var(--deep-blue);
    background-color: var(--powder-blue);
@@ -56,6 +63,7 @@ header nav {
 }
 
 /* No marker will be shown on the menu on the webpage */
+/* Remove the bullet points from the navigation menu and contact footer links at bottom of page*/
 header nav ul, .contact-footer li {
     list-style-type: none;
 }
@@ -73,12 +81,12 @@ a {
   text-underline-offset: 6px;
 }
 
+/* Set the margin on all paragraphs to 0 */
 p {
   margin: 0;
 }
 
-
-
+/* Style the hero banner section of the webpage */
 .hero-banner {
   background-image:linear-gradient(rgba(0, 0, 255, 0.3),
    rgba(0, 0, 255, 0.3)), url("../images/02-hero-bg.jpg");
@@ -89,6 +97,7 @@ p {
   position: relative;
 }
 
+/* Style the heading in the hero banner h2 element */
 .hero-banner h2 {
   color: var(--deep-blue);
    background-color: var(--powder-blue);
@@ -97,11 +106,13 @@ p {
     float: right;
 }
 
+/* Style the page section elements */
 .page-section{
   display: flex;
   margin: 5rem 5rem 5rem 5rem;
 }
 
+/* Style the headings in the page section elements */
 .page-section h2{
   font-size: 40px;
   flex: 20%;
@@ -111,16 +122,19 @@ p {
   margin-right: 20px;
 }
 
+/* Style the paragraph and grid elements in the page section elements */
 .page-section p, .work-sect-grid,.contact-footer {
 flex: 80%;
 }
 
+/* Below are Styling for the grid containers for portfolio items */
 .work-grid-container1 { grid-area: container1; 
-  background-color: #8ea68d;
+  background-image:linear-gradient(rgba(0, 0, 255, 0.3),
+  rgba(0, 0, 255, 0.3)), url("../images/02-run-buddy.jpg");
   border-style: solid;
   border-color: var(--powder-blue);
-
 }
+
 .work-grid-container2 { grid-area: container2;
   background-image:linear-gradient(rgba(0, 0, 255, 0.3),
   rgba(0, 0, 255, 0.3)), url("../images/02-portfolio-1.jpg");
@@ -145,8 +159,12 @@ border-style: solid;
   border-style: solid;
   border-color: var(--powder-blue);}
 
+  .container:hover .image {
+    opacity: 0.3;
+  }
+
+  /* Below are Styling for the grid layout */
 .work-sect-grid {
- /* margin: 0px 5%;*/
   display: grid;
   grid-template-rows: repeat(5,100px);
   grid-template-columns: 1fr 1fr;
@@ -158,10 +176,10 @@ border-style: solid;
     "container4 container5"
 ;
   grid-gap: 4px;
-
   padding: 4px;
 }
 
+/* Below are Styling for the grid area layout */
 .work-grid-area {
   background-position: center;
   background-size: cover;
@@ -172,22 +190,51 @@ border-style: solid;
   align-content: end;
 }
 
+/* Below are Styling for text within grid areas */
 .work-grid-area h4, .work-grid-area p{
   background-color: var(--powder-blue);
   inline-size: 100px;
   
 }
+/* Bottom margin for paragraphs  in class work-grid-area*/
 .work-grid-area p{
   margin-bottom: 10px;
 }
 
+/* Below are Stylings for the contact footer */
 .contact-footer {
   display: flex;
   justify-content: space-around;
 }
 
+/* Below are Stylings for the contact footer list a tags */
 .contact-footer li a {
   color: var(--text-blue);
   text-decoration: underline;
   text-underline-offset: 6px;
+}
+
+@media screen and (max-width: 768px) {
+  header, .contact-footer {
+    flex-direction: column;
+  }
+
+  main {
+    max-width: 1200px;
+  }
+
+  .work-sect-grid {
+    display: grid;
+    grid-template-rows: repeat(5,120px);
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "container1"
+      "container2"
+      "container3"
+      "container4"
+      "container5"
+  ;
+    grid-gap: 4px;
+    padding: 4px;
+  }
 }
